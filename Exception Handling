@@ -1,0 +1,36 @@
+def division_example():
+    try:
+        numerator = int(input("Enter the numerator: "))
+        denominator = int(input("Enter the denominator: "))
+        result = numerator / denominator
+        print(f"Result: {numerator} / {denominator} = {result}")
+    except ZeroDivisionError:
+        print("Error: Division by zero!")
+    except ValueError:
+        print("Error: Invalid input. Please enter valid integers.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        print("Division example finished.")
+
+def index_example():
+    try:
+        my_list = [1, 2, 3]
+        index = int(input("Enter an index: "))
+        value = my_list[index]
+        print(f"Value at index {index}: {value}")
+    except IndexError:
+        print("Error: Index out of range!")
+    except ValueError:
+        print("Error: Invalid index. Please enter a valid integer.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        print("Index example finished.")
+
+# Demonstrate exception handling
+print("Division Example:")
+division_example()
+
+print("\nIndex Example:")
+index_example()
