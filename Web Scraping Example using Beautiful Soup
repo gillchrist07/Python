@@ -1,0 +1,19 @@
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the webpage to scrape
+url = "https://www.example.com/news"
+
+# Send a GET request to the webpage
+response = requests.get(url)
+
+# Parse the HTML content using Beautiful Soup
+soup = BeautifulSoup(response.content, 'html.parser')
+
+# Find all the <h2> elements containing article titles
+article_titles = soup.find_all('h2')
+
+# Extract and print the article titles
+print("Article Titles:")
+for title in article_titles:
+    print(title.text)
