@@ -1,0 +1,49 @@
+def matrix_addition(matrix1, matrix2):
+    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
+        raise ValueError("Matrices must have the same dimensions for addition.")
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = [matrix1[i][j] + matrix2[i][j] for j in range(len(matrix1[0]))]
+        result.append(row)
+    
+    return result
+
+def matrix_multiplication(matrix1, matrix2):
+    if len(matrix1[0]) != len(matrix2):
+        raise ValueError("Number of columns in the first matrix must be equal to the number of rows in the second matrix.")
+    
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix2[0])):
+            cell = sum(matrix1[i][k] * matrix2[k][j] for k in range(len(matrix1[0])))
+            row.append(cell)
+        result.append(row)
+    
+    return result
+
+def matrix_transpose(matrix):
+    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+
+# Example matrices
+matrix_A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+matrix_B = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+
+# Matrix addition
+matrix_sum = matrix_addition(matrix_A, matrix_B)
+print("Matrix Sum:")
+for row in matrix_sum:
+    print(row)
+
+# Matrix multiplication
+matrix_product = matrix_multiplication(matrix_A, matrix_B)
+print("Matrix Product:")
+for row in matrix_product:
+    print(row)
+
+# Matrix transpose
+matrix_T = matrix_transpose(matrix_A)
+print("Matrix Transpose:")
+for row in matrix_T:
+    print(row)
