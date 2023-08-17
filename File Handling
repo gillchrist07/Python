@@ -1,0 +1,20 @@
+# Read data from input file
+input_filename = "input_data.txt"
+output_filename = "output_data.txt"
+
+try:
+    with open(input_filename, 'r') as input_file:
+        data = input_file.read()
+
+    # Manipulate the data (for example, let's convert it to uppercase)
+    manipulated_data = data.upper()
+
+    # Write manipulated data to output file
+    with open(output_filename, 'w') as output_file:
+        output_file.write(manipulated_data)
+
+    print("Data manipulation and writing successful.")
+except FileNotFoundError:
+    print("Input file not found.")
+except Exception as e:
+    print("An error occurred:", str(e))
