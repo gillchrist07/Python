@@ -1,0 +1,32 @@
+def is_balanced(expression):
+    stack = []
+    
+    for char in expression:
+        if char in "([{":
+            stack.append(char)
+        elif char in ")]}":
+            if not stack:
+                return False
+            
+            top = stack.pop()
+            if (char == ')' and top != '(') or \
+               (char == ']' and top != '[') or \
+               (char == '}' and top != '{'):
+                return False
+    
+    return not stack  # Return True if stack is empty, False if not
+
+# Example usage
+expression1 = "{[()()]}"
+expression2 = "{[(])}"
+expression3 = "()"
+
+print(f"Expression 1 is balanced: {is_balanced(expression1)}")
+print(f"Expression 2 is balanced: {is_balanced(expression2)}")
+print(f"Expression 3 is balanced: {is_balanced(expression3)}")
+Replace expression1, expression2, and expression3 with the expressions you want to check. The function will return True if the expression is balanced (all opening and closing parentheses match correctly), and False otherwise.
+
+
+
+
+
