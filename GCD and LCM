@@ -1,0 +1,14 @@
+import math
+
+def gcd(a, b):
+    return math.gcd(a, b)
+
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+# Test the functions
+num1 = int(input("Enter the first number: "))
+num2 = int(input("Enter the second number: "))
+
+print("GCD:", gcd(num1, num2))
+print("LCM:", lcm(num1, num2))
