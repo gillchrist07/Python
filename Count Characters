@@ -1,0 +1,19 @@
+def count_characters_and_words(sentence):
+    # Count characters
+    num_characters = len(sentence)
+
+    # Count words
+    words = sentence.split()
+    num_words = len(words)
+
+    return num_characters, num_words
+
+# Get input sentence from the user
+input_sentence = input("Enter a sentence: ")
+
+# Call the function to count characters and words
+char_count, word_count = count_characters_and_words(input_sentence)
+
+# Display the results
+print("Number of characters:", char_count)
+print("Number of words:", word_count)
