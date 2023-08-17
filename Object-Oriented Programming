@@ -1,0 +1,25 @@
+# Base class
+class BasicObject:
+    def __init__(self, name):
+        self.name = name
+
+    def show_info(self):
+        print(f"BasicObject - Name: {self.name}")
+
+# Subclass inheriting from BasicObject
+class SubObject(BasicObject):
+    def __init__(self, name, description):
+        super().__init__(name)
+        self.description = description
+
+    # Method overriding
+    def show_info(self):
+        print(f"SubObject - Name: {self.name}, Description: {self.description}")
+
+# Create instances of BasicObject and SubObject
+basic_obj = BasicObject("Simple Object")
+sub_obj = SubObject("Inherited Object", "This is an inherited object.")
+
+# Demonstrate method calls
+basic_obj.show_info()  # Calls BasicObject's show_info()
+sub_obj.show_info()    # Calls SubObject's overridden show_info()
